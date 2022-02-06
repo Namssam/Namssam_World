@@ -15,74 +15,66 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:background="#ff0000"
-        android:layout_below="@id/tv_04"
-        android:layout_marginLeft="50dp"
         />
 
     <TextView
-        android:id="@+id/tv_02"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:background="#ff0000"
-        />
-
-    <TextView
-        android:id="@+id/tv_03"
-        android:layout_width="25dp"
-        android:layout_height="10dp"
-        android:background="#0000ff"
-        android:layout_toRightOf="@id/tv_02"
-        />
-
-    <TextView
-        android:id="@+id/tv_04"
-        android:layout_width="25dp"
-        android:layout_height="10dp"
-        android:layout_below="@id/tv_02"
-        android:background="#0000ff"
-        android:rotation="90"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="-8dp"
-        />
-
-    <TextView
-        android:layout_width="25dp"
-        android:layout_height="10dp"
-        android:layout_below="@id/tv_04"
-        android:layout_marginTop="25dp"
-        android:background="#0000ff"
-        android:rotation="90"
-        android:layout_marginLeft="-8dp"
-        />
-
-    <TextView
-        android:id="@+id/tv_05"
-        android:layout_width="25dp"
-        android:layout_height="10dp"
-        android:background="#0000ff"
-        android:layout_toRightOf="@id/tv_03"
-        android:layout_marginLeft="25dp"
-        />
-
-    <TextView
+        android:id="@+id/tv_01_right"
         android:layout_width="25dp"
         android:layout_height="10dp"
         android:background="#0000ff"
         android:layout_toRightOf="@id/tv_01"
-        android:layout_marginTop="50dp"
         />
 
     <TextView
+        android:id="@+id/tv_01_below"
+        android:layout_width="10dp"
+        android:layout_height="25dp"
+        android:background="#0000ff"
+        android:layout_below="@id/tv_01"
+        />
+
+    <TextView
+        android:id="@+id/tv_center"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="#ff0000"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_top_right"
         android:layout_width="25dp"
         android:layout_height="10dp"
         android:background="#0000ff"
-        android:layout_below="@id/tv_01"
-        android:rotation="90"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@id/tv_center"
         />
 
+    <TextView
+        android:id="@+id/tv_left_below"
+        android:layout_width="10dp"
+        android:layout_height="25dp"
+        android:background="#0000ff"
+        android:layout_below="@id/tv_center"
+        />
 
+    <TextView
+        android:id="@+id/tv_center_right"
+        android:layout_width="25dp"
+        android:layout_height="10dp"
+        android:background="#0000ff"
+        android:layout_toRightOf="@id/tv_center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        />
 
+    <TextView
+        android:id="@+id/tv_center_below"
+        android:layout_width="10dp"
+        android:layout_height="25dp"
+        android:background="#0000ff"
+        android:layout_below="@id/tv_center"
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>

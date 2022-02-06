@@ -23,8 +23,8 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:background="#00ff00"
-        android:layout_alignLeft="@id/tv_01"
-        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@id/tv_03"
+        android:layout_above="@id/tv_03"
         />
 
     <TextView
@@ -33,7 +33,7 @@
         android:layout_height="25dp"
         android:background="#0000ff"
         android:layout_below="@id/tv_01"
-        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@id/tv_01"
         />
 
     <TextView
@@ -41,9 +41,8 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:background="#ff0000"
-        android:layout_alignParentLeft="true"
         android:layout_below="@id/tv_03"
-        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@id/tv_01"
         />
 
 
