@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Locale_HomeWork</string>
+    <string name="btn_setting">設定</string>
+    <string name="locale_ko">大韓民国</string>
+    <string name="locale_ja">日本</string>    <string name="locale_en">アメリカ</string>
+</resources>

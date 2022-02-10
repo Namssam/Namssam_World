@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SettingActivity">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:paddingLeft="20dp">
+
+        <RadioButton
+            android:id="@+id/radio_ko"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/locale_ko"
+            android:textSize="20sp"
+            android:textColor="#880099"
+            />
+
+        <RadioButton
+            android:id="@+id/radio_ja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/locale_ja"
+            android:textSize="20sp"
+            android:textColor="#ff0000"
+            />
+
+        <RadioButton
+            android:id="@+id/radio_en"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/locale_en"
+            android:textSize="20sp"
+            android:textColor="#0000ff"
+            />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ok"
+        android:layout_gravity="right"
+        android:layout_marginTop="50dp"
+        />
+
+</LinearLayout>

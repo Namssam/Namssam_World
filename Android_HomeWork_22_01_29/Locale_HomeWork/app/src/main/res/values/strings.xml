@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Locale_HomeWork</string>
+    <string name="btn_setting">설정</string>
+    <string name="locale_ko">한국</string>
+    <string name="locale_ja">일본</string>
+    <string name="locale_en">미국</string>
+</resources>
