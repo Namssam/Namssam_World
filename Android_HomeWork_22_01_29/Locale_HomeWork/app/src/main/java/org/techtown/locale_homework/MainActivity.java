@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv_locale = findViewById(R.id.tv_locale);
+        tv_locale = findViewById(R.id.tv_locale); //여기에 처음 집어 넣는 Locale이 없네요, 처음은 빈값?? SharedPreference에서 값있으면 가져오고 없으면 현재 Locale값 넣으세요
 
         Button btn_setting = findViewById(R.id.btn_setting);
         btn_setting.setOnClickListener(new View.OnClickListener() {
@@ -33,5 +33,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String locale = intent.getStringExtra("locale");
         tv_locale.setText(locale);
+       
     }
 }
