@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-
 public class MainActivity extends AppCompatActivity {
 
     CustomAlertDialog csAlertDialog;
@@ -50,19 +49,16 @@ public class MainActivity extends AppCompatActivity {
 
             csAlertDialog = new CustomAlertDialog(this);
             csAlertDialog.setType(CHECK_TYPE);
-            csAlertDialog.show();
 
         } else if (type == "Edit") {
 
             csAlertDialog = new CustomAlertDialog(this);
             csAlertDialog.setType(EDIT_TYPE);
-            csAlertDialog.show();
 
         } else {
 
             csAlertDialog = new CustomAlertDialog(this);
             csAlertDialog.setType(ALERT_TYPE);
-            csAlertDialog.show();
 
         }
     }
