@@ -19,12 +19,13 @@
 
         <!--
         app:listData="@{mainViewModel.bookInfo}" 여기 왜 오류나지... 인터넷 찾아보는 중!!
+        Cannot find a setter for xxxxxxxx 오류 발생
         -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:listData="@{mainViewModel.bookInfo}"
+            app:listData="@{mainViewModel.all}"
             tools:listitem="@layout/book_items" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

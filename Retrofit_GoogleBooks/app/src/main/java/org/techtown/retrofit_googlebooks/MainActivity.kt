@@ -1,17 +1,15 @@
 package org.techtown.retrofit_googlebooks
 
-import android.content.Intent
+import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
-import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.room.Room
+import androidx.recyclerview.widget.LinearLayoutManager
 import org.techtown.retrofit_googlebooks.databinding.ActivityMainBinding
-import retrofit2.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,39 +20,42 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.activity_main)
+
 
         binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+
         binding.lifecycleOwner = this
         // activity_main.xml 에서 선언해 준 variable명
         binding.mainViewModel = ViewModel
         setRecyclerView()
 
-        /*
+
         // https://hanyeop.tistory.com/199 참고
-        val repository = Repository()
+        val repository = Application()
         val viewModelFactory = MainViewModelFactory(repository)
 
         val viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
 
         viewModel.getBookInfo()
+
         viewModel.myResponse.observe(this, Observer {
             Log.d("Response", it.toString())
         })
-         */
-
 
         //getBookData() // 책정보 가져오기 함수
     }
 
     private fun setRecyclerView() {
-        // Set contactItemClick & contactItemLongClick lambda
-        // 안에 들어갈 lambda식을 잘 모르겠음
-        val adapter = BookInfoAdapter({volumeInfo -> volumeInfo },
-            {volumeInfo -> volumeInfo })
+        val adapter = BookInfoAdapter()
 
         binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.setHasFixedSize(true)
+
+        ViewModel.getAll().observe(this, Observer { volumeInfos ->
+            adapter.setVolumeInfos(volumeInfos!! as List<VolumeInfo>)
+        })
 
 /*
     // https://velog.io/@24hyunji/Retrofit-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0 참고
