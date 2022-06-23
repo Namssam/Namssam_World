@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--VolumeInfo을 data로 받음-->
+    <data>
+        <variable
+            name="volumeInfo"
+            type="org.techtown.mvvm_retrofit_room_repository_googlebooksapi.data.VolumeInfo" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    app:imageUrl="@{volumeInfo.imageLinks.thumbnail}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{volumeInfo.title.toString()}"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_author"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{volumeInfo.authors.toString()}"
+                        android:textColor="#5E5D5D"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/tv_publisher"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{volumeInfo.publisher.toString()}"
+                        android:textColor="#5E5D5D"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_publishedDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{volumeInfo.publishedDate.toString()}"
+                        android:textColor="#5E5D5D"
+                        android:textSize="15sp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "org.techtown.mvvm_retrofit_room_repository_googlebooksapi"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    // databinding 사용
+    buildFeatures {
+        dataBinding true
+    }
+    // NonExistentClass 오류 해결을 위함
+    kapt {
+        correctErrorTypes true
+    }
+}
+
+dependencies {
+
+    // Retrofit 설정
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    // Gson Converter 사용
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    
+    // Json Converter인 Moshi 사용(Moshi 사용법 더 익힐 것 @GET가 안됨)
+    //implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
+
+    // okhttp3 사용
+    //implementation 'com.squareup.okhttp3:logging-interceptor:4.5.0'
+
+    // ViewModel 사용
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+
+
+    // by viewModels()를 이용한 초기화를 사용하기 위해 추가
+    implementation 'androidx.activity:activity-ktx:1.4.0'
+    implementation 'androidx.fragment:fragment-ktx:1.4.1'
+
+    // LiveData 사용
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.0-beta01'
+
+    // Coroutine 사용
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
+
+    // Glide 사용
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+
+
+    //Room 사용
+    //implementation 'androidx.room:room-runtime:2.1.0'
+    //implementation "androidx.room:room-ktx:2.2.5"
+    //kapt 'androidx.room:room-compiler:2.1.0'
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
