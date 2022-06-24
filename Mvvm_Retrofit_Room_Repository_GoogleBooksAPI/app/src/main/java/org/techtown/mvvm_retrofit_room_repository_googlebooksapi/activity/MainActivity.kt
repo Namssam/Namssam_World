@@ -15,8 +15,9 @@ class MainActivity : AppCompatActivity() {
 
     // private val TAG = "Response"
 
-    // lateinit var로 했을 경우 늦은초기화를 할 수 없다는 오류가 발생함(by lazy로 변경함)
-    private val viewModel by lazy {MainViewModel(repository = Repository())}
+    // lateinit var로 했을 경우 늦은초기화를 할 수 없다는 오류가 발생함(by lazy로 변경함) -> viewModel을 사용할 때 값을 넣어주지 않았음
+    //private val viewModel by lazy {MainViewModel(Repository())}
+    private lateinit var viewModel: MainViewModel
     private lateinit var binding: ActivityMainBinding
     //val viewModel: MainViewModel by viewModels()
 
@@ -35,10 +36,12 @@ class MainActivity : AppCompatActivity() {
         val adapter = bookAdapter
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        // lateinit을 해줬기 때문에 viewModel에 어떤 값이 들어갈지 넣어줘야함
+        viewModel = MainViewModel(Repository())
+        viewModel.makeApiCall()
         viewModel.myResponse.observe(this, Observer {
             adapter.setData(it)
         })
 
-        viewModel.makeApiCall()
     }
 }

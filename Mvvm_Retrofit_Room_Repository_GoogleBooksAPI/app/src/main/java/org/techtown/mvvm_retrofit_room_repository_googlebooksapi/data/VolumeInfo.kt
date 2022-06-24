@@ -9,7 +9,7 @@ data class VolumeInfo(
     val authors: List<String?>,
 
     @SerializedName("imageLinks")
-    val imageLinks: ImageLinks?,
+    val imageLinks: ImageLinks,
 
     @SerializedName("infoLink")
     val infoLink: String?,
